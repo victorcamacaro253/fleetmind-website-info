@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>🚚 Delivery Route Optimizer - Simulación Animada</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <style>
+        * { box-sizing: border-box; }
+        body { margin: 0; padding: 0; font-family: 'Segoe UI', Arial, sans-serif; }
+        #map { position: absolute; top: 0; bottom: 0; width: 100%; }
+        
+        .control-panel {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            min-width: 320px;
+            max-height: calc(100vh - 40px);
+            overflow-y: auto;
+        }
+        .control-panel h3 {
+            margin: 0 0 15px 0;
+            font-size: 18px;
+            color: #1f2937;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .control-panel button {
+            padding: 10px 14px;
+            margin: 3px;
+            cursor: pointer;
+            border: none;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+        .control-panel button:hover { transform: translateY(-1px); }
+        .play-btn { background: #10b981; color: white; }
+        .pause-btn { background: #f59e0b; color: white; }
+        .reset-btn { background: #3b82f6; color: white; }
+        .hex-btn { background: #8b5cf6; color: white; }
+        
+        .speed-control {
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid #e5e7eb;
+        }
+        .speed-control label {
+            font-size: 13px;
+            font-weight: 600;
+            color: #374151;
+            display: block;
+            margin-bottom: 6px;
+        }
+        .speed-control input[type="range"] {
+            width: 100%;
+            accent-color: #3b82f6;
+        }
+        
+        .status-bar {
+            margin-top: 12px;
+            padding: 10px;
+            background: #f3f4f6;
+            border-radius: 8px;
+            font-size: 12px;
+        }
+        .status-bar #status {
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 6px;
+        }
+        .vehicle-status {
+            margin: 4px 0;
+            padding: 4px 6px;
+            background: white;
+            border-radius: 4px;
+            font-size: 11px;
+            border-left: 3px solid #3b82f6;
+        }
+        
+        .depot-legend {
+            margin-top: 12px;
+            padding: 10px;
+            background: #f9fafb;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+        }
+        .depot-legend b {
+            font-size: 12px;
+            color: #374151;
+            display: block;
+            margin-bottom: 6px;
+        }
+        .depot-item {
+            margin: 3px 0;
+            display: flex;
+            align-items: center;
+            font-size: 11px;
+            color: #4b5563;
+        }
+        .depot-color {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 8px;
+            flex-shrink: 0;
+        }
+        
+        .vehicle-marker {
+            font-size: 28px;
+            text-align: center;
+            line-height: 35px;
+            filter: drop-shadow(2px 2px 3px rgba(0,0,0,0.4));
+            z-index: 1000 !important;
+        }
+        
+        .custom-marker {
+            position: relative;
+            width: 32px;
+            height: 40px;
+        }
+        .marker-pin {
+            width: 32px;
+            height: 32px;
+            border-radius: 50% 50% 50% 0;
+            position: absolute;
+            transform: rotate(-45deg);
+            left: 0;
+            top: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .marker-pin::after {
+            content: '';
+            width: 16px;
+            height: 16px;
+            margin: 8px 0 0 8px;
+            background: white;
+            position: absolute;
+            border-radius: 50%;
+        }
+        .marker-icon {
+            position: absolute;
+            transform: rotate(45deg);
+            font-size: 14px;
+            color: white;
+            z-index: 1;
+            margin-left: 9px;
+            margin-top: 7px;
+        }
+        .marker-prime .marker-pin { background: #dc2626; }
+        .marker-standard .marker-pin { background: #2563eb; }
+        .marker-economy .marker-pin { background: #16a34a; }
+        
+        .order-popup {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            font-size: 13px;
+            min-width: 200px;
+        }
+        .order-popup .order-id { font-weight: bold; font-size: 14px; margin-bottom: 5px; }
+        .order-popup .priority { font-weight: bold; margin-bottom: 5px; }
+        .order-popup .priority.prime { color: #dc2626; }
+        .order-popup .priority.standard { color: #2563eb; }
+        .order-popup .priority.economy { color: #16a34a; }
+        .order-popup .detail { margin: 3px 0; color: #555; }
+        
+        .stats-overlay {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            z-index: 1000;
+            background: white;
+            padding: 15px 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            display: flex;
+            gap: 20px;
+        }
+        .stat-item {
+            text-align: center;
+        }
+        .stat-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #1f2937;
+        }
+        .stat-label {
+            font-size: 11px;
+            color: #6b7280;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    
+    <div class="control-panel">
+        <h3>🚚 Control de Simulación</h3>
+        <button id="playBtn" class="play-btn" onclick="playAnimation()">▶️ Play</button>
+        <button class="pause-btn" onclick="pauseAnimation()">️ Pausar</button>
+        <button class="reset-btn" onclick="resetAnimation()">🔄 Reset</button>
+        <button id="toggleHexBtn" class="hex-btn" onclick="toggleHexagons()">
+            🔷 Mostrar Hexágonos H3
+        </button>
+        
+        <div class="speed-control">
+            <label><b> Velocidad:</b> <span id="speedLabel">1x</span></label>
+            <input type="range" id="speedSlider" min="10" max="200" value="50">
+        </div>
+        
+        <div class="depot-legend">
+            <b>🏭 Depósitos Activos (10)</b>
+            <div id="depotLegend"></div>
+        </div>
+        
+        <div class="status-bar">
+            <div id="status">Estado: ⏸️ Detenido</div>
+            <div id="vehicleStatus"></div>
+        </div>
+    </div>
+
+    <div class="stats-overlay">
+        <div class="stat-item">
+            <div class="stat-value" id="statOrders">0/102</div>
+            <div class="stat-label">Entregas</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-value" id="statProgress">0%</div>
+            <div class="stat-label">Progreso</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-value" id="statVehicles">11</div>
+            <div class="stat-label">Vehículos</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-value" id="statCO2">0 kg</div>
+            <div class="stat-label">CO₂ Evitado</div>
+        </div>
+    </div>
+
+    <script>
+        // ===== DATOS DE EJEMPLO: 10 DEPÓSITOS DE AMAZON EN LA =====
+        const depotsInfo = [
+            { key: 'DPS6', name: 'DPS6 - Simi Valley', lat: 34.2697, lon: -118.7184, color: '#dc2626' },
+            { key: 'DUR1', name: 'DUR1 - Burbank', lat: 34.200364, lon: -118.3511211, color: '#16a34a' },
+            { key: 'DLX9', name: 'DLX9 - Culver City', lat: 33.9844, lon: -118.3983, color: '#2563eb' },
+            { key: 'DCX7', name: 'DCX7 - Torrance', lat: 33.8484696, lon: -118.2925636, color: '#ea580c' },
+            { key: 'VAX3', name: 'VAX3 - Gardena', lat: 33.8830291, lon: -118.2800617, color: '#9333ea' },
+            { key: 'DLX5', name: 'DLX5 - Central LA', lat: 34.1389886, lon: -118.2711079, color: '#db2777' },
+            { key: 'DFX3', name: 'DFX3 - LAX', lat: 33.9479688, lon: -118.3822891, color: '#64748b' },
+            { key: 'DLX7', name: 'DLX7 - Cypress', lat: 33.8000, lon: -118.0233, color: '#65a30d' },
+            { key: 'DPS1', name: 'DPS1 - Rosemead', lat: 34.0853512, lon: -118.0609786, color: '#0891b2' },
+            { key: 'DLA3', name: 'DLA3 - Commerce', lat: 34.0081095, lon: -118.1442805, color: '#78350f' }
+        ];
+
+        // ===== GENERAR PARADAS (ÓRDENES) PARA CADA DEPÓSITO =====
+        function generateStops(centerLat, centerLon, radius, numStops, priorities) {
+            const stops = [];
+            for (let i = 0; i < numStops; i++) {
+                const angle = (i / numStops) * Math.PI * 2 + (Math.random() - 0.5) * 0.5;
+                const r = radius * (0.4 + Math.random() * 0.5);
+                const lat = centerLat + (r / 111) * Math.cos(angle);
+                const lon = centerLon + (r / (111 * Math.cos(centerLat * Math.PI / 180))) * Math.sin(angle);
+                stops.push({
+                    lat: lat,
+                    lon: lon,
+                    id: `ORD-${String(i + 1).padStart(3, '0')}`,
+                    priority: priorities[i % priorities.length],
+                    demand: Math.floor(Math.random() * 5 + 1),
+                    time_window_start: 8 + Math.floor(Math.random() * 10),
+                    time_window_end: 10 + Math.floor(Math.random() * 10),
+                    service_time: Math.floor(Math.random() * 5 + 2)
+                });
+            }
+            return stops;
+        }
+
+        // ===== GENERAR RUTA QUE CONECTA DEPÓSITO → PARADAS → DEPÓSITO =====
+        function generateRouteThroughStops(depotLat, depotLon, stops, numInterpolationPoints) {
+            const route = [[depotLat, depotLon]]; // Inicia en el depósito
+            
+            // Conectar cada parada con la siguiente
+            for (let i = 0; i < stops.length; i++) {
+                const prevPoint = i === 0 ? [depotLat, depotLon] : [stops[i-1].lat, stops[i-1].lon];
+                const nextPoint = [stops[i].lat, stops[i].lon];
+                
+                // Interpolar puntos entre la parada anterior y la actual
+                for (let j = 1; j <= numInterpolationPoints; j++) {
+                    const t = j / numInterpolationPoints;
+                    const lat = prevPoint[0] + (nextPoint[0] - prevPoint[0]) * t;
+                    const lon = prevPoint[1] + (nextPoint[1] - prevPoint[1]) * t;
+                    route.push([lat, lon]);
+                }
+            }
+            
+            // Regresar al depósito desde la última parada
+            const lastStop = stops[stops.length - 1];
+            for (let j = 1; j <= numInterpolationPoints; j++) {
+                const t = j / numInterpolationPoints;
+                const lat = lastStop.lat + (depotLat - lastStop.lat) * t;
+                const lon = lastStop.lon + (depotLon - lastStop.lon) * t;
+                route.push([lat, lon]);
+            }
+            
+            return route;
+        }
+
+        // ===== GENERAR DATOS DE RUTAS =====
+        const routesData = [];
+        const priorities = ['PRIME_NOW', 'STANDARD', 'STANDARD', 'ECONOMY'];
+        const vehicleIcons = ['🚛', '🚚', '', '🚐'];
+
+        depotsInfo.forEach((depot, depotIdx) => {
+            const numVehicles = depotIdx === 4 ? 2 : 1; // VAX3 tiene 2 vehículos
+            const radius = 0.03 + Math.random() * 0.02;
+            
+            for (let v = 0; v < numVehicles; v++) {
+                const numStops = Math.floor(Math.random() * 5 + 5);
+                const stops = generateStops(depot.lat, depot.lon, radius, numStops, priorities);
+                const route = generateRouteThroughStops(depot.lat, depot.lon, stops, 15);
+                
+                routesData.push({
+                    id: `${depot.key}-V${v + 1}`,
+                    depot_key: depot.key,
+                    depot_name: depot.name,
+                    color: depot.color,
+                    vehicle_icon: vehicleIcons[depotIdx % vehicleIcons.length],
+                    vehicle_name: depotIdx % 3 === 0 ? 'Rivian EDV 700' : depotIdx % 3 === 1 ? 'Ford Transit' : 'Amazon Flex',
+                    path: route,
+                    stops: stops,
+                    distance_km: (Math.random() * 80 + 30).toFixed(1),
+                    num_orders: numStops
+                });
+            }
+        });
+
+        // ===== GENERAR HEXÁGONOS H3 SIMULADOS =====
+        const hexagonsData = [];
+        depotsInfo.forEach(depot => {
+            const center = [];
+            for (let i = 0; i < 6; i++) {
+                const angle = (i / 6) * Math.PI * 2 - Math.PI / 6;
+                const r = 0.008;
+                center.push([
+                    depot.lat + (r / 111) * Math.cos(angle),
+                    depot.lon + (r / (111 * Math.cos(depot.lat * Math.PI / 180))) * Math.sin(angle)
+                ]);
+            }
+            hexagonsData.push({
+                boundary: center,
+                color: depot.color,
+                is_center: true,
+                name: depot.name
+            });
+            
+            for (let ring = 0; ring < 3; ring++) {
+                for (let i = 0; i < 6; i++) {
+                    const angle = (i / 6) * Math.PI * 2 + (ring * Math.PI / 6);
+                    const cx = depot.lat + (0.015 + ring * 0.012) * Math.cos(angle);
+                    const cy = depot.lon + (0.015 + ring * 0.012) * Math.sin(angle);
+                    const hex = [];
+                    for (let j = 0; j < 6; j++) {
+                        const a = (j / 6) * Math.PI * 2;
+                        const r = 0.006;
+                        hex.push([
+                            cx + (r / 111) * Math.cos(a),
+                            cy + (r / (111 * Math.cos(cx * Math.PI / 180))) * Math.sin(a)
+                        ]);
+                    }
+                    hexagonsData.push({
+                        boundary: hex,
+                        color: depot.color,
+                        is_center: false,
+                        name: depot.name
+                    });
+                }
+            }
+        });
+
+        // ===== INICIALIZAR MAPA =====
+        const map = L.map('map').setView([34.0522, -118.2437], 10);
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+            attribution: '© OpenStreetMap © CARTO',
+            maxZoom: 19
+        }).addTo(map);
+
+        // ===== DEPOSITOS =====
+        depotsInfo.forEach(depot => {
+            const depotIcon = L.divIcon({
+                html: `<div style="font-size: 32px; filter: drop-shadow(2px 2px 3px rgba(0,0,0,0.4));">🏭</div>`,
+                iconSize: [40, 40],
+                iconAnchor: [20, 20]
+            });
+            L.marker([depot.lat, depot.lon], {icon: depotIcon})
+                .addTo(map)
+                .bindPopup(`<b>🏭 ${depot.name}</b><br><span style="color:${depot.color}">●</span> ${depot.key}`);
+        });
+
+        // ===== LEYENDA =====
+        const legendDiv = document.getElementById('depotLegend');
+        depotsInfo.forEach(depot => {
+            legendDiv.innerHTML += `
+                <div class="depot-item">
+                    <div class="depot-color" style="background: ${depot.color};"></div>
+                    <span>${depot.name}</span>
+                </div>
+            `;
+        });
+
+        // ===== HEXÁGONOS H3 =====
+        let hexLayerGroup = L.layerGroup();
+        let areHexagonsVisible = false;
+
+        hexagonsData.forEach(hex => {
+            const polygon = L.polygon(hex.boundary, {
+                color: hex.color,
+                weight: hex.is_center ? 3 : 1,
+                fill: true,
+                fillOpacity: hex.is_center ? 0.25 : 0.08,
+                opacity: hex.is_center ? 0.8 : 0.4
+            }).bindPopup(`<b>${hex.name}</b>${hex.is_center ? '<br>🏭 Hexágono central (Depósito)' : '<br>🔷 Zona de cobertura H3'}`);
+            hexLayerGroup.addLayer(polygon);
+        });
+
+        function toggleHexagons() {
+            const btn = document.getElementById('toggleHexBtn');
+            if (areHexagonsVisible) {
+                map.removeLayer(hexLayerGroup);
+                btn.textContent = '🔷 Mostrar Hexágonos H3';
+                areHexagonsVisible = false;
+            } else {
+                hexLayerGroup.addTo(map);
+                btn.textContent = '🔷 Ocultar Hexágonos H3';
+                areHexagonsVisible = true;
+            }
+        }
+
+        // ===== ICONOS DE ÓRDENES =====
+        function createOrderIcon(priority) {
+            let iconClass, faIcon;
+            if (priority === 'PRIME_NOW') { iconClass = 'marker-prime'; faIcon = 'fa-bolt'; }
+            else if (priority === 'STANDARD') { iconClass = 'marker-standard'; faIcon = 'fa-truck'; }
+            else { iconClass = 'marker-economy'; faIcon = 'fa-box'; }
+            
+            return L.divIcon({
+                className: 'custom-marker ' + iconClass,
+                html: `<div class="marker-pin"></div><i class="fas ${faIcon} marker-icon"></i>`,
+                iconSize: [32, 40],
+                iconAnchor: [16, 40],
+                popupAnchor: [0, -40]
+            });
+        }
+
+        function createOrderPopup(stop) {
+            const priorityClass = stop.priority.toLowerCase();
+            return `
+                <div class="order-popup">
+                    <div class="order-id">📦 Orden #${stop.id}</div>
+                    <div class="priority ${priorityClass}">${stop.priority}</div>
+                    <div class="detail">⚖️ Peso: ${stop.demand} kg</div>
+                    <div class="detail">⏰ Ventana: ${stop.time_window_start}:00 - ${stop.time_window_end}:00</div>
+                    <div class="detail">⚡ Service: ${stop.service_time} min</div>
+                </div>
+            `;
+        }
+
+        // ===== CREAR RUTAS Y VEHÍCULOS =====
+        let isPlaying = false;
+        let currentSpeed = 50;
+        let animationInterval = null;
+        let currentTime = 0;
+        const totalTime = 30000;
+        let vehicles = [];
+        let totalDeliveries = 0;
+
+        routesData.forEach((route) => {
+            // Línea de ruta MÁS VISIBLE
+            L.polyline(route.path, {
+                color: route.color,
+                weight: 4,
+                opacity: 0.7,
+                lineCap: 'round',
+                lineJoin: 'round'
+            }).addTo(map);
+
+            // Marcadores de órdenes
+            const orderMarkers = [];
+            route.stops.forEach((stop) => {
+                const icon = createOrderIcon(stop.priority);
+                const popupContent = createOrderPopup(stop);
+                const orderMarker = L.marker([stop.lat, stop.lon], {icon: icon})
+                    .addTo(map)
+                    .bindPopup(popupContent);
+                orderMarkers.push({ marker: orderMarker, stop: stop, delivered: false });
+            });
+
+            // Marcador del vehículo
+            const truckIcon = L.divIcon({
+                className: 'vehicle-marker',
+                html: route.vehicle_icon || '🚚',
+                iconSize: [35, 35],
+                iconAnchor: [17, 17]
+            });
+            
+            const marker = L.marker(route.path[0], {icon: truckIcon}).addTo(map);
+            vehicles.push({
+                marker: marker,
+                route: route,
+                currentIndex: 0,
+                progress: 0,
+                orderMarkers: orderMarkers
+            });
+        });
+
+        // ===== FUNCIONES DE ANIMACIÓN =====
+        function interpolate(point1, point2, t) {
+            return [
+                point1[0] + (point2[0] - point1[0]) * t,
+                point1[1] + (point2[1] - point1[1]) * t
+            ];
+        }
+
+        function checkAndMarkDeliveries(vehicle) {
+            const currentPos = vehicle.marker.getLatLng();
+            vehicle.orderMarkers.forEach((orderMarkerObj) => {
+                if (orderMarkerObj.delivered) return;
+                const orderPos = orderMarkerObj.marker.getLatLng();
+                if (currentPos.distanceTo(orderPos) < 50) {
+                    orderMarkerObj.delivered = true;
+                    map.removeLayer(orderMarkerObj.marker);
+                    totalDeliveries++;
+                    document.getElementById('statOrders').textContent = `${totalDeliveries}/102`;
+                }
+            });
+        }
+
+        function updateVehicleStatus() {
+            const statusDiv = document.getElementById('vehicleStatus');
+            let html = '';
+            vehicles.forEach((v) => {
+                html += `<div class="vehicle-status">🚚 ${v.route.vehicle_name}: ${v.progress || 0}% (${v.route.distance_km} km)</div>`;
+            });
+            statusDiv.innerHTML = html;
+        }
+
+        function updateStats() {
+            const avgProgress = vehicles.reduce((sum, v) => sum + (v.progress || 0), 0) / vehicles.length;
+            document.getElementById('statProgress').textContent = `${Math.round(avgProgress)}%`;
+            document.getElementById('statCO2').textContent = `${Math.round(avgProgress * 1.03)} kg`;
+        }
+
+        function updateVehicles() {
+            currentTime += currentSpeed;
+            vehicles.forEach((vehicle) => {
+                const route = vehicle.route;
+                const totalPoints = route.path.length;
+                if (totalPoints < 2) return;
+
+                const currentPointIndex = Math.floor(vehicle.currentIndex);
+                const nextPointIndex = Math.min(currentPointIndex + 1, totalPoints - 1);
+                const segmentProgress = vehicle.currentIndex - currentPointIndex;
+
+                if (currentPointIndex < totalPoints - 1) {
+                    vehicle.marker.setLatLng(interpolate(
+                        route.path[currentPointIndex],
+                        route.path[nextPointIndex],
+                        Math.max(0, Math.min(1, segmentProgress))
+                    ));
+                    vehicle.progress = Math.round((currentPointIndex / (totalPoints - 1)) * 100);
+                    checkAndMarkDeliveries(vehicle);
+                    vehicle.currentIndex += 0.5;
+                } else {
+                    vehicle.progress = 100;
+                    vehicle.marker.setLatLng(route.path[totalPoints - 1]);
+                    vehicle.orderMarkers.forEach(om => {
+                        if (!om.delivered) {
+                            om.delivered = true;
+                            map.removeLayer(om.marker);
+                            totalDeliveries++;
+                        }
+                    });
+                }
+            });
+
+            const avgProgress = vehicles.reduce((sum, v) => sum + (v.progress || 0), 0) / vehicles.length;
+            document.getElementById('status').textContent = `Estado: ▶️ En progreso (${Math.round(avgProgress)}%)`;
+            updateVehicleStatus();
+            updateStats();
+
+            if (vehicles.every(v => v.progress >= 100)) {
+                pauseAnimation();
+                document.getElementById('status').textContent = 'Estado: ✅ ¡Todas las rutas completadas!';
+            }
+        }
+
+        function playAnimation() {
+            if (!isPlaying) {
+                isPlaying = true;
+                animationInterval = setInterval(updateVehicles, currentSpeed);
+                document.getElementById('playBtn').textContent = '⏸️ Pausar';
+                document.getElementById('status').textContent = 'Estado: ▶️ Reproduciendo';
+            }
+        }
+
+        function pauseAnimation() {
+            isPlaying = false;
+            clearInterval(animationInterval);
+            document.getElementById('playBtn').textContent = '▶️ Play';
+            const progress = vehicles.length > 0 
+                ? Math.round(vehicles.reduce((sum, v) => sum + (v.progress || 0), 0) / vehicles.length)
+                : 0;
+            document.getElementById('status').textContent = `Estado: ⏸️ Pausa (${progress}%)`;
+        }
+
+        function resetAnimation() {
+            pauseAnimation();
+            currentTime = 0;
+            totalDeliveries = 0;
+            document.getElementById('statOrders').textContent = '0/102';
+            vehicles.forEach((vehicle) => {
+                vehicle.marker.setLatLng(vehicle.route.path[0]);
+                vehicle.currentIndex = 0;
+                vehicle.progress = 0;
+            });
+            document.getElementById('status').textContent = 'Estado: 🔄 Reset';
+            updateVehicleStatus();
+            updateStats();
+        }
+
+        document.getElementById('speedSlider').addEventListener('input', function(e) {
+            const val = parseInt(e.target.value);
+            currentSpeed = 210 - val;
+            const speedMultiplier = (val / 50).toFixed(1);
+            document.getElementById('speedLabel').textContent = `${speedMultiplier}x`;
+            if (isPlaying) {
+                clearInterval(animationInterval);
+                animationInterval = setInterval(updateVehicles, currentSpeed);
+            }
+        });
+
+        // Auto-play al cargar
+        setTimeout(playAnimation, 1500);
+    </script>
+</body>
+</html>

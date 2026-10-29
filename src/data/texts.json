@@ -1,0 +1,1092 @@
+{
+  "fleetMind": {
+    "es": {
+      "hero": {
+        "badge": "Estándar VDA5050 v2.0.0 · Agnóstico al Hardware",
+        "title": "El Cerebro que Orquesta",
+        "highlight": "tu Flota de Robots",
+        "subtitle": "Warehouse Execution System (WES) y Gemelo Digital para Logística 4.0. Simula, valida y orquesta flotas de AMRs en tiempo real, sin vendor lock-in y con predicción de ROI.",
+        "ctaPrimary": "Ver Simulación en Vivo",
+        "ctaSecondary": "Explorar Arquitectura"
+      },
+      "challenge": {
+        "title": "El Desafío de la Logística Moderna",
+        "subtitle": "Las empresas invierten millones en automatización, pero les falta el cerebro que orquesta todo.",
+        "items": [
+          {
+            "problem": "Múltiples fabricantes",
+            "solution": "Estándar VDA5050 nativo",
+            "impact": "Elimina el vendor lock-in"
+          },
+          {
+            "problem": "Inversiones a ciegas",
+            "solution": "Motor What-If integrado",
+            "impact": "Ahorra $200K+ en CapEx innecesario"
+          },
+          {
+            "problem": "Cuellos de botella invisibles",
+            "solution": "Detección de congestión en tiempo real",
+            "impact": "+30% de throughput operativo"
+          },
+          {
+            "problem": "Baterías que mueren temprano",
+            "solution": "Tracking de SoH + carga de oportunidad",
+            "impact": "+40% vida útil de baterías"
+          },
+          {
+            "problem": "Pedidos urgentes se retrasan",
+            "solution": "Asignación multi-criterio con SLA tiers",
+            "impact": "99.9% SLA compliance"
+          },
+          {
+            "problem": "Robots chocan entre sí",
+            "solution": "Anti-deadlock + reservation table",
+            "impact": "0 colisiones físicas"
+          }
+        ]
+      },
+      "environments": {
+        "title": "Los 3 Entornos de FleetMind",
+        "subtitle": "Una plataforma completa que cubre todo el ciclo de vida de tu almacén automatizado.",
+        "items": [
+          {
+            "icon": "BarChart3",
+            "title": "Modo Análisis",
+            "desc": "Estrategia, ROI y Motor What-If. Responde preguntas de negocio antes de invertir en hardware.",
+            "phase": "Antes de invertir"
+          },
+          {
+            "icon": "Play",
+            "title": "Modo Simulación Vivo",
+            "desc": "Integración, testing y demo visual. Orquesta robots mock vía MQTT con animación a 60 FPS.",
+            "phase": "Durante el desarrollo"
+          },
+          {
+            "icon": "Cpu",
+            "title": "Modo WES Real",
+            "desc": "Orquestación de producción real con estándar VDA5050 nativo. Plug & Play con cualquier fabricante.",
+            "phase": "Después de decidir"
+          }
+        ]
+      },
+      "metrics": {
+        "title": "El Impacto en Números",
+        "subtitle": "Resultados reales extraídos de logs de ejecución continua del sistema.",
+        "items": [
+          {
+            "value": "268",
+            "label": "Paquetes/hora",
+            "sub": "Throughput promedio"
+          },
+          {
+            "value": "100%",
+            "label": "SLA Compliance",
+            "sub": "Entregas dentro de ventana"
+          },
+          {
+            "value": "45.9%",
+            "label": "Utilización de Flota",
+            "sub": "Zona óptima de absorción"
+          },
+          {
+            "value": "95%",
+            "label": "Salud de Batería (SoH)",
+            "sub": "Tras múltiples ciclos"
+          }
+        ]
+      },
+      "value": {
+        "title": "Impacto Real en tu Operación",
+        "subtitle": "FleetMind no es solo software; es una ventaja competitiva para cada área de tu empresa.",
+        "items": [
+          {
+            "icon": "Briefcase",
+            "role": "Para Directores de Operaciones (COO)",
+            "desc": "Visibilidad total y control absoluto sobre el piso del almacén.",
+            "benefits": [
+              "Mayor throughput sin necesidad de aumentar la flota física.",
+              "Cumplimiento de SLA garantizado (100% en nuestras simulaciones).",
+              "Detección temprana de cuellos de botella antes de que detengan la operación."
+            ]
+          },
+          {
+            "icon": "DollarSign",
+            "role": "Para Directores Financieros (CFO)",
+            "desc": "Toma de decisiones basada en datos, no en suposiciones.",
+            "benefits": [
+              "ROI calculable antes de invertir en hardware gracias al Motor What-If.",
+              "Ahorro de $200K+ evitando compras innecesarias de robots o muelles.",
+              "Mantenimiento predictivo que reduce el downtime no planificado en un 40%."
+            ]
+          },
+          {
+            "icon": "Monitor",
+            "role": "Para Gerentes de TI",
+            "desc": "Arquitectura moderna, segura y sin ataduras a un solo proveedor.",
+            "benefits": [
+              "100% Agnóstico al hardware gracias al estándar VDA5050 nativo (cero vendor lock-in).",
+              "Integración sencilla con WMS/ERP existentes (SAP, Oracle) vía MQTT o REST.",
+              "Escalable: de 50 robots simulados a 10,000+ robots físicos sin cambiar la lógica."
+            ]
+          },
+          {
+            "icon": "Wrench",
+            "role": "Para Gerentes de Mantenimiento",
+            "desc": "Pasa de un modelo reactivo a uno proactivo y predictivo.",
+            "benefits": [
+              "Tracking en tiempo real de la Salud de la Batería (SoH) por cada robot.",
+              "Conteo automático de ciclos de carga para programar reemplazos.",
+              "Alertas inmediatas de robots desconectados o con errores de hardware."
+            ]
+          }
+        ]
+      },
+      "usp": {
+        "title": "¿Por qué FleetMind es único?",
+        "subtitle": "Democratizamos la automatización de alto nivel que otras soluciones cobran como consultoría externa.",
+        "items": [
+          {
+            "icon": "Zap",
+            "title": "Motor What-If Integrado",
+            "desc": "Prueba 15+ escenarios (picos de demanda, escalado de flota) antes de invertir un solo dólar."
+          },
+          {
+            "icon": "Shield",
+            "title": "100% Agnóstico al Hardware",
+            "desc": "Habla VDA5050 nativo. Conecta robots de Locus, MiR o KUKA con 0 líneas de código cambiadas."
+          },
+          {
+            "icon": "Battery",
+            "title": "Gemelo Digital con SoH",
+            "desc": "Simula degradación de baterías y carga de oportunidad para mantenimiento predictivo real."
+          },
+          {
+            "icon": "AlertTriangle",
+            "title": "Anti-Deadlock Centralizado",
+            "desc": "Detección y replanificación automática en segundos, evitando bloqueos en pasillos estrechos."
+          }
+        ]
+      },
+      "intelligence": {
+        "title": "Más que Automatización: Inteligencia Pura",
+        "subtitle": "Transformamos datos brutos del almacén en ventaja competitiva tangible.",
+        "items": [
+          {
+            "icon": "Brain",
+            "title": "Sombra Digital Bidireccional",
+            "desc": "Ingerimos datos del WMS en tiempo real para reasignar robots a zonas de alta demanda antes de que se forme la cola."
+          },
+          {
+            "icon": "Activity",
+            "title": "Mantenimiento Predictivo",
+            "desc": "Alertamos al gerente: 'El Robot 003 mostrará degradación crítica en 14 días', evitando paradas no planificadas."
+          },
+          {
+            "icon": "TrendingUp",
+            "title": "Analítica Prescriptiva",
+            "desc": "No solo detectamos cuellos de botella; el Motor What-If sugiere: 'Reasigna 2 robots al Muelle 3 para +18% de throughput'."
+          },
+          {
+            "icon": "FileSearch",
+            "title": "Trazabilidad Granular",
+            "desc": "Historial inmutable de cada paquete para auditorías regulatorias (FDA, alimentos) en segundos, no en días."
+          }
+        ]
+      },
+      "industries": {
+        "title": "Diseñado para tu Industria",
+        "subtitle": "Soluciones adaptadas a los desafíos regulatorios y operativos de cada sector.",
+        "items": [
+          {
+            "icon": "ShoppingCart",
+            "name": "E-commerce y Retail",
+            "desc": "Gestión de picos impredecibles (Black Friday) y SLA tiers para clientes premium.",
+            "benefit": "Escalado dinámico"
+          },
+          {
+            "icon": "Pill",
+            "name": "Farmacéutica y Salud",
+            "desc": "Trazabilidad 100% auditable y priorización automática de productos refrigerados.",
+            "benefit": "Cumplimiento normativo"
+          },
+          {
+            "icon": "Package",
+            "name": "3PL (Logística Tercerizada)",
+            "desc": "Orquestación de flotas mixtas de diferentes fabricantes para múltiples clientes con SLAs distintos.",
+            "benefit": "Flexibilidad total"
+          },
+          {
+            "icon": "Factory",
+            "name": "Manufactura",
+            "desc": "Transporte punto a punto flexible y sincronización just-in-time con líneas de producción.",
+            "benefit": "Cero tiempos muertos"
+          }
+        ]
+      },
+      "comparison": {
+        "title": "FleetMind vs. Soluciones Tradicionales",
+        "subtitle": "Por qué los líderes del mercado están cambiando a una arquitectura abierta.",
+        "items": [
+          {
+            "feature": "Motor What-If Integrado",
+            "competitor": "no",
+            "fleetmind": "yes"
+          },
+          {
+            "feature": "100% Agnóstico al Hardware (VDA5050)",
+            "competitor": "partial",
+            "fleetmind": "yes"
+          },
+          {
+            "feature": "Simulación de Degradación de Batería (SoH)",
+            "competitor": "no",
+            "fleetmind": "yes"
+          },
+          {
+            "feature": "Cero Costo de Licencia (Open Source)",
+            "competitor": "no",
+            "fleetmind": "yes"
+          },
+          {
+            "feature": "Anti-Deadlock Centralizado",
+            "competitor": "yes",
+            "fleetmind": "yes"
+          }
+        ]
+      },
+      "dualBrain": {
+        "title": "El Doble Cerebro de FleetMind",
+        "subtitle": "Dos motores potentes trabajando en perfecta sincronía: uno predice el futuro, el otro ejecuta el presente.",
+        "digitalTwin": {
+          "label": "GEMELO DIGITAL",
+          "title": "Predice y Planifica",
+          "desc": "Simula tu almacén en un entorno virtual seguro. Toma decisiones de inversión basadas en datos, no en suposiciones.",
+          "features": [
+            "Motor What-If con 15+ escenarios de estrés",
+            "Modelado de degradación de baterías (SoH)",
+            "Detección de congestión y cuellos de botella",
+            "Cálculo exacto de ROI y Capacity Planning"
+          ]
+        },
+        "wes": {
+          "label": "WES EN TIEMPO REAL",
+          "title": "Orquesta y Ejecuta",
+          "desc": "El cerebro operativo que habla el idioma universal de la robótica (VDA5050) y toma decisiones en milisegundos.",
+          "features": [
+            "Agnóstico al hardware (Locus, MiR, KUKA)",
+            "Asignación de tareas por SLA y Batería",
+            "Resolución autónoma de deadlocks",
+            "Trazabilidad de paquetes de 6 etapas"
+          ]
+        }
+      },
+      "integrations": {
+        "title": "Se Conecta con Tu Ecosistema Existente",
+        "subtitle": "FleetMind se integra nativamente con los sistemas que ya usas. Sin reemplazos, sin fricción.",
+        "items": [
+          {
+            "icon": "Database",
+            "name": "WMS (Warehouse Management)",
+            "desc": "SAP WM, Oracle WMS, Manhattan Associates. Sincronización bidireccional en tiempo real."
+          },
+          {
+            "icon": "Server",
+            "name": "ERP Systems",
+            "desc": "SAP ERP, Oracle Cloud, Microsoft Dynamics. Integración de inventario y pedidos."
+          },
+          {
+            "icon": "ShoppingCart",
+            "name": "OMS (Order Management)",
+            "desc": "Shopify, Magento, Salesforce Commerce Cloud. Priorización automática de pedidos."
+          },
+          {
+            "icon": "Truck",
+            "name": "TMS (Transportation)",
+            "desc": "MercuryGate, Oracle TMS. Optimización de carga y consolidación de envíos."
+          }
+        ]
+      },
+      "capabilities": {
+        "title": "Una Plataforma, Cuatro Capacidades Clave",
+        "subtitle": "FleetMind orquesta cada aspecto de tu operación logística con inteligencia y precisión.",
+        "items": [
+          {
+            "icon": "Workflow",
+            "title": "Orquesta el Fulfillment",
+            "desc": "Sincroniza inventario, predice demanda y optimiza operaciones en almacenes, centros de distribución y redes de última milla.",
+            "features": [
+              "Gestión multi-almacén",
+              "Predicción de demanda con ML",
+              "Optimización de flujos en tiempo real"
+            ]
+          },
+          {
+            "icon": "Boxes",
+            "title": "Sincroniza Inventario",
+            "desc": "Asigna y sincroniza inventario entre almacenes, tiendas y inventario de última milla en tiempo real.",
+            "features": [
+              "Visibilidad 360° del stock",
+              "Rebalanceo automático",
+              "Prevención de stockouts"
+            ]
+          },
+          {
+            "icon": "Clock",
+            "title": "Garantiza SLA 99.9%",
+            "desc": "Priorización de pedidos, adherencia SLA del 99.9% y optimización de mano de obra con asignación inteligente.",
+            "features": [
+              "Tiers de SLA configurables",
+              "Alertas proactivas",
+              "Reportes de cumplimiento"
+            ]
+          },
+          {
+            "icon": "Zap",
+            "title": "Optimiza Workflows en Tiempo Real",
+            "desc": "Predice demanda y asigna recursos dinámicamente usando machine learning y adaptive learning.",
+            "features": [
+              "Replanificación automática",
+              "Detección de cuellos de botella",
+              "Escalado elástico de flota"
+            ]
+          }
+        ]
+      },
+      "caseStudy": {
+        "title": "Impacto Real en Operaciones",
+        "subtitle": "Métricas extraídas de simulaciones reales con flotas de 15+ robots AMR.",
+        "metrics": [
+          {
+            "icon": "TrendingUp",
+            "value": "268",
+            "label": "Paquetes/hora",
+            "desc": "Throughput promedio"
+          },
+          {
+            "icon": "CheckCircle2",
+            "value": "100%",
+            "label": "SLA Compliance",
+            "desc": "787/787 orders"
+          },
+          {
+            "icon": "Users",
+            "value": "45.9%",
+            "label": "Fleet Utilization",
+            "desc": "Zona óptima"
+          },
+          {
+            "icon": "Clock",
+            "value": "89.6s",
+            "label": "Avg Delivery Time",
+            "desc": "Competitivo"
+          }
+        ],
+        "featured": {
+          "label": "CASO DE ÉXITO",
+          "title": "Simulación Enterprise con 15 AMRs",
+          "desc": "Prueba de concepto con flota heterogénea (Rivian EDV + Ford Transit) en almacén de 50x50 celdas con 374 estanterías.",
+          "results": [
+            {
+              "value": "0",
+              "label": "Colisiones físicas"
+            },
+            {
+              "value": "95%",
+              "label": "Battery SoH"
+            },
+            {
+              "value": "103kg",
+              "label": "CO₂ evitado/día"
+            },
+            {
+              "value": "6,312",
+              "label": "Capacidad diaria (paq)"
+            }
+          ]
+        }
+      },
+      "whyFleetMind": {
+        "title": "Agnostic-First Automation",
+        "subtitle": "Creemos que la flexibilidad no es opcional. La demanda cambia, la disponibilidad de mano de obra fluctúa y los requisitos operativos evolucionan.",
+        "desc": "En lugar de bloquear a las empresas en infraestructura rígida, FleetMind permite escalar, optimizar y expandir la automatización según las necesidades cambiantes, entregando valor duradero hoy mientras proporciona la agilidad para adaptarse mañana.",
+        "dimensions": [
+          {
+            "icon": "Shield",
+            "title": "Agnosticismo de Hardware",
+            "desc": "Conecta robots de cualquier fabricante (Locus, MiR, KUKA) sin cambiar una línea de código gracias a VDA5050."
+          },
+          {
+            "icon": "Zap",
+            "title": "Escalabilidad Elástica",
+            "desc": "Agrega o retira robots según la demanda. El sistema se reconfigura automáticamente sin licencias inactivas."
+          },
+          {
+            "icon": "TrendingUp",
+            "title": "Optimización Continua",
+            "desc": "El Motor What-If y el Gemelo Digital permiten probar escenarios antes de implementar cambios en producción."
+          },
+          {
+            "icon": "CheckCircle2",
+            "title": "Inversión Protegida",
+            "desc": "No importa qué hardware compres en el futuro, FleetMind lo soportará. Tu inversión está segura."
+          }
+        ]
+      },
+      "simulationPage": {
+  "heroTitle": "Simula el Futuro de tu Almacén",
+  "heroSubtitle": "Antes de mover un solo paquete físico o gastar un dólar en hardware, valida tu operación en nuestro Gemelo Digital con precisión del 99.9%.",
+  "features": [
+    { "icon": "Cpu", "title": "Motor What-If", "desc": "Prueba 15+ escenarios: ¿Qué pasa si la demanda sube un 300%? ¿Si agregamos 5 robots más? Obtén respuestas en minutos." },
+    { "icon": "BarChart3", "title": "Análisis de ROI y CapEx", "desc": "Calcula el punto de equilibrio exacto, el costo operativo proyectado y el ahorro en mano de obra antes de firmar cualquier contrato." },
+    { "icon": "Zap", "title": "Visualización en Tiempo Real", "desc": "Observa la operación a 60 FPS. Identifica cuellos de botella, congestión en pasillos y comportamientos anómalos visualmente." },
+    { "icon": "FileOutput", "title": "Reportes Ejecutivos", "desc": "Exporta datos de throughput, utilización de flota, salud de baterías (SoH) y cumplimiento de SLA para presentar a la directiva." }
+  ],
+  "stepsTitle": "Cómo Funciona la Simulación",
+  "steps": [
+    { "number": "01", "title": "Configura tu Almacén", "desc": "Define el layout (50x50 celdas), ubicaciones de muelles, cargadores y estanterías." },
+    { "number": "02", "title": "Define tu Flota y Demanda", "desc": "Selecciona robots (Rivian, Transit, etc.) e inyecta órdenes con diferentes niveles de prioridad SLA." },
+    { "number": "03", "title": "Ejecuta y Observa", "desc": "Inicia la simulación. El Gemelo Digital orquestará cada movimiento, carga y decisión en tiempo real." },
+    { "number": "04", "title": "Analiza y Optimiza", "desc": "Revisa las métricas finales. Ajusta variables y vuelve a ejecutar hasta encontrar la configuración perfecta." }
+  ]
+},
+"wesPage": {
+  "heroTitle": "El Cerebro Operativo Agnóstico",
+  "heroSubtitle": "FleetMind WES cierra la brecha entre tu WMS de alto nivel y los controladores de robots de bajo nivel, orquestando todo en tiempo real bajo el estándar VDA5050.",
+  "theGapTitle": "El Problema que Resuelve el WES",
+  "theGapDesc": "El WMS sabe QUÉ mover, pero no CÓMO ni QUIÉN. El robot sabe CÓMO moverse, pero no tiene visión global. FleetMind WES es el eslabón inteligente que toma decisiones en milisegundos.",
+  "capabilities": [
+    { "icon": "Network", "title": "Nativo VDA5050 v2.0.0", "desc": "Habla el idioma universal de la robótica. Conecta Locus, MiR, KUKA o Fetch sin cambiar una sola línea de código." },
+    { "icon": "Brain", "title": "Asignación Multi-Criterio", "desc": "No asigna al azar. Evalúa distancia, nivel de batería, estado actual y prioridad del pedido (URGENT, HIGH, NORMAL) en milisegundos." },
+    { "icon": "Shield", "title": "Anti-Deadlock en Vivo", "desc": "Si un robot espera >20 pasos en una celda congestionada, el WES limpia su ruta y calcula un camino alternativo al instante." },
+    { "icon": "Layers", "title": "Trazabilidad de 6 Etapas", "desc": "Rastreo inmutable de cada paquete: PENDING → ASSIGNED → IN_PROGRESS → PICKED → DELIVERED. Ideal para auditorías." }
+  ],
+  "architectureTitle": "Flujo de Datos en Tiempo Real",
+  "architectureSteps": [
+    { "name": "WMS / ERP", "desc": "Envía nueva orden de picking" },
+    { "name": "FleetMind WES", "desc": "Evalúa, asigna robot óptimo y genera ruta VDA5050" },
+    { "name": "Broker MQTT", "desc": "Transmite la orden de forma segura y en tiempo real" },
+    { "name": "Robot AMR", "desc": "Ejecuta, reporta estado y completa la tarea" }
+  ]
+},
+      "useCases": {
+        "title": "Casos de Uso Reales",
+        "subtitle": "Cómo FleetMind transforma operaciones logísticas complejas en resultados medibles.",
+        "featured": {
+          "number": "01",
+          "icon": "TrendingUp",
+          "title": "Planificación Pre-Black Friday",
+          "problem": "¿Puede mi almacén manejar 3x la demanda sin colapsar?",
+          "solution": "El Motor What-If ejecuta 15+ escenarios combinando flota, muelles y cargadores. La recomendación basada en datos: 'Compra 5 robots + 5 muelles, no 10 robots'.",
+          "value": "Ahorro de $200K+ en inversiones innecesarias"
+        },
+        "items": [
+          {
+            "number": "02",
+            "icon": "Zap",
+            "title": "Gestión de Pedidos Urgentes (Prime Now)",
+            "problem": "Los pedidos críticos (2 horas) se pierden en la cola o requieren mano de obra extra costosa para ser despachados a tiempo.",
+            "solution": "El sistema identifica automáticamente los pedidos urgentes y reasigna robots cercanos en segundos, priorizando su ruta sin detener la operación normal del almacén.",
+            "value": "99.9% de cumplimiento de entregas urgentes"
+          },
+          {
+            "number": "03",
+            "icon": "TrendingUp",
+            "title": "Throughput Constante en Horas Pico",
+            "problem": "En horas de máxima demanda, los pasillos se saturan, los robots se esperan entre sí y la productividad cae hasta un 30%.",
+            "solution": "Detección de congestión en tiempo real. El sistema redirige el tráfico de forma dinámica o envía robots con carga al muelle más cercano para liberar el pasillo inmediatamente.",
+            "value": "0 paradas operativas por congestión"
+          },
+          {
+            "number": "04",
+            "icon": "Battery",
+            "title": "Turnos Ininterrumpidos (Uptime Máximo)",
+            "problem": "Los robots se quedan sin batería en medio del turno o pasan horas cargando, reduciendo la capacidad real y generando cuellos de botella.",
+            "solution": "Carga de Oportunidad inteligente: el sistema envía robots a cargar durante micro-pausas naturales de la operación, sin afectar los pedidos prioritarios.",
+            "value": "+40% de vida útil de baterías y flota"
+          },
+          {
+            "number": "05",
+            "icon": "Network",
+            "title": "Escalabilidad sin Costos de Integración",
+            "problem": "Agregar o cambiar de fabricante de robots (ej. de Locus a MiR) toma meses de desarrollo personalizado y costos de integración millonarios.",
+            "solution": "Gracias al estándar nativo VDA5050, FleetMind descubre y orquesta cualquier robot nuevo automáticamente. Plug & Play real.",
+            "value": "Despliegue en días, no en meses. Cero vendor lock-in."
+          }
+        ]
+      },
+      "cta": {
+        "title": "¿Listo para transformar tu almacén?",
+        "description": "Desde el análisis estratégico hasta la orquestación en tiempo real. Democratizamos la automatización.",
+        "btnGithub": "Ver en GitHub",
+        "btnDocs": "Documentación Técnica",
+        "btnContact": "Contáctame",
+        "trustText": "¿Tienes preguntas sobre la arquitectura o quieres una demo personalizada? Escríbeme directamente y con gusto lo coordinamos."
+      },
+      "footer": {
+        "brandName": "FleetMind",
+        "brandTagline": "WES & Digital Twin",
+        "mission": "Sistema Ciberfísico de Orquestación Logística compatible con VDA5050. Agnóstico, escalable y predictivo.",
+        "sustainabilityBadge": "Cero Vendor Lock-in",
+        "navTitle": "Explorar",
+        "navHome": "Inicio",
+        "navArchitecture": "Arquitectura",
+        "navDocs": "Documentación",
+        "resourcesTitle": "Recursos",
+        "resourceDocs": "Documentación Técnica",
+        "resourceAIBreakdown": "Desglose de IA",
+        "connectTitle": "Conecta",
+        "locationPrefix": "Desarrollado en",
+        "locationCity": "Latinoamérica",
+        "locationSuffix": "Inspirado en la logística 4.0 de clase mundial",
+        "email": "victorcamacaro253@gmail.com",
+        "copyright": "© {year} Victor Camacaro. Todos los derechos reservados.",
+        "devNotePrefix": "Construido con",
+        "devNoteSuffix": "Python, MQTT, Streamlit y VDA5050"
+      }
+    },
+    "en": {
+      "hero": {
+        "badge": "VDA5050 v2.0.0 Standard · Hardware Agnostic",
+        "title": "The Brain that Orchestrates",
+        "highlight": "Your Robot Fleet",
+        "subtitle": "Warehouse Execution System (WES) and Digital Twin for Logistics 4.0. Simulate, validate, and orchestrate AMR fleets in real-time, without vendor lock-in and with ROI prediction.",
+        "ctaPrimary": "View Live Simulation",
+        "ctaSecondary": "Explore Architecture"
+      },
+      "challenge": {
+        "title": "The Modern Logistics Challenge",
+        "subtitle": "Companies invest millions in automation, but lack the brain that orchestrates it all.",
+        "items": [
+          {
+            "problem": "Multiple manufacturers",
+            "solution": "Native VDA5050 standard",
+            "impact": "Eliminates vendor lock-in"
+          },
+          {
+            "problem": "Blind investments",
+            "solution": "Integrated What-If Engine",
+            "impact": "Saves $200K+ in unnecessary CapEx"
+          },
+          {
+            "problem": "Invisible bottlenecks",
+            "solution": "Real-time congestion detection",
+            "impact": "+30% operational throughput"
+          },
+          {
+            "problem": "Batteries die early",
+            "solution": "SoH tracking + opportunity charging",
+            "impact": "+40% battery lifespan"
+          },
+          {
+            "problem": "Urgent orders get delayed",
+            "solution": "Multi-criteria assignment with SLA tiers",
+            "impact": "99.9% SLA compliance"
+          },
+          {
+            "problem": "Robots collide with each other",
+            "solution": "Anti-deadlock + reservation table",
+            "impact": "0 physical collisions"
+          }
+        ]
+      },
+      "environments": {
+        "title": "The 3 FleetMind Environments",
+        "subtitle": "A complete platform covering the entire lifecycle of your automated warehouse.",
+        "items": [
+          {
+            "icon": "BarChart3",
+            "title": "Analysis Mode",
+            "desc": "Strategy, ROI, and What-If Engine. Answer business questions before investing in hardware.",
+            "phase": "Before investing"
+          },
+          {
+            "icon": "Play",
+            "title": "Live Simulation Mode",
+            "desc": "Integration, testing, and visual demo. Orchestrates mock robots via MQTT with 60 FPS animation.",
+            "phase": "During development"
+          },
+          {
+            "icon": "Cpu",
+            "title": "Real WES Mode",
+            "desc": "Real production orchestration with native VDA5050 standard. Plug & Play with any manufacturer.",
+            "phase": "After deciding"
+          }
+        ]
+      },
+      "metrics": {
+        "title": "The Impact in Numbers",
+        "subtitle": "Real results extracted from continuous system execution logs.",
+        "items": [
+          {
+            "value": "268",
+            "label": "Packages/hour",
+            "sub": "Average throughput"
+          },
+          {
+            "value": "100%",
+            "label": "SLA Compliance",
+            "sub": "Deliveries within window"
+          },
+          {
+            "value": "45.9%",
+            "label": "Fleet Utilization",
+            "sub": "Optimal absorption zone"
+          },
+          {
+            "value": "95%",
+            "label": "Battery Health (SoH)",
+            "sub": "After multiple cycles"
+          }
+        ]
+      },
+      "usp": {
+        "title": "Why is FleetMind Unique?",
+        "subtitle": "We democratize high-level automation that other solutions charge for as external consulting.",
+        "items": [
+          {
+            "icon": "Zap",
+            "title": "Integrated What-If Engine",
+            "desc": "Test 15+ scenarios (demand spikes, fleet scaling) before investing a single dollar."
+          },
+          {
+            "icon": "Shield",
+            "title": "100% Hardware Agnostic",
+            "desc": "Speaks native VDA5050. Connect Locus, MiR, or KUKA robots with 0 lines of code changed."
+          },
+          {
+            "icon": "Battery",
+            "title": "Digital Twin with SoH",
+            "desc": "Simulates battery degradation and opportunity charging for real predictive maintenance."
+          },
+          {
+            "icon": "AlertTriangle",
+            "title": "Centralized Anti-Deadlock",
+            "desc": "Detection and automatic replanning in seconds, preventing blockages in narrow aisles."
+          }
+        ]
+      },
+      "value": {
+        "title": "Real Impact on Your Operation",
+        "subtitle": "FleetMind is not just software; it's a competitive advantage for every area of your business.",
+        "items": [
+          {
+            "icon": "Briefcase",
+            "role": "For Operations Directors (COO)",
+            "desc": "Total visibility and absolute control over the warehouse floor.",
+            "benefits": [
+              "Higher throughput without needing to increase the physical fleet.",
+              "Guaranteed SLA compliance (100% in our simulations).",
+              "Early detection of bottlenecks before they halt operations."
+            ]
+          },
+          {
+            "icon": "DollarSign",
+            "role": "For Financial Directors (CFO)",
+            "desc": "Data-driven decision making, not guesswork.",
+            "benefits": [
+              "Calculable ROI before investing in hardware thanks to the What-If Engine.",
+              "Savings of $200K+ by avoiding unnecessary purchases of robots or docks.",
+              "Predictive maintenance that reduces unplanned downtime by 40%."
+            ]
+          },
+          {
+            "icon": "Monitor",
+            "role": "For IT Managers",
+            "desc": "Modern, secure architecture with no ties to a single vendor.",
+            "benefits": [
+              "100% Hardware Agnostic thanks to native VDA5050 standard (zero vendor lock-in).",
+              "Seamless integration with existing WMS/ERP (SAP, Oracle) via MQTT or REST.",
+              "Scalable: from 50 simulated robots to 10,000+ physical robots without changing logic."
+            ]
+          },
+          {
+            "icon": "Wrench",
+            "role": "For Maintenance Managers",
+            "desc": "Move from a reactive to a proactive and predictive model.",
+            "benefits": [
+              "Real-time tracking of Battery State of Health (SoH) for each robot.",
+              "Automatic charge cycle counting to schedule replacements.",
+              "Immediate alerts for disconnected robots or hardware errors."
+            ]
+          }
+        ]
+      },
+      "intelligence": {
+        "title": "Beyond Automation: Pure Intelligence",
+        "subtitle": "Transforming raw warehouse data into tangible competitive advantage.",
+        "items": [
+          {
+            "icon": "Brain",
+            "title": "Bidirectional Digital Shadow",
+            "desc": "We ingest real-time WMS data to proactively reassign robots to high-demand zones before queues form."
+          },
+          {
+            "icon": "Activity",
+            "title": "Predictive Maintenance",
+            "desc": "We alert managers: 'Robot 003 will show critical degradation in 14 days', preventing unplanned downtime."
+          },
+          {
+            "icon": "TrendingUp",
+            "title": "Prescriptive Analytics",
+            "desc": "We don't just detect bottlenecks; the What-If Engine suggests: 'Reassign 2 robots to Dock 3 for +18% throughput'."
+          },
+          {
+            "icon": "FileSearch",
+            "title": "Granular Traceability",
+            "desc": "Immutable history for every package, enabling regulatory audits (FDA, food safety) in seconds, not days."
+          }
+        ]
+      },
+      "industries": {
+        "title": "Built for Your Industry",
+        "subtitle": "Solutions tailored to the regulatory and operational challenges of every sector.",
+        "items": [
+          {
+            "icon": "ShoppingCart",
+            "name": "E-commerce & Retail",
+            "desc": "Management of unpredictable peaks (Black Friday) and SLA tiers for premium customers.",
+            "benefit": "Dynamic scaling"
+          },
+          {
+            "icon": "Pill",
+            "name": "Pharmaceutical & Healthcare",
+            "desc": "100% auditable traceability and automatic prioritization of refrigerated products.",
+            "benefit": "Regulatory compliance"
+          },
+          {
+            "icon": "Package",
+            "name": "3PL (Third-Party Logistics)",
+            "desc": "Orchestration of mixed fleets from different manufacturers for multiple clients with distinct SLAs.",
+            "benefit": "Total flexibility"
+          },
+          {
+            "icon": "Factory",
+            "name": "Manufacturing",
+            "desc": "Flexible point-to-point transport and just-in-time synchronization with production lines.",
+            "benefit": "Zero downtime"
+          }
+        ]
+      },
+      "comparison": {
+        "title": "FleetMind vs. Traditional Solutions",
+        "subtitle": "Why market leaders are switching to an open architecture.",
+        "items": [
+          {
+            "feature": "Integrated What-If Engine",
+            "competitor": "no",
+            "fleetmind": "yes"
+          },
+          {
+            "feature": "100% Hardware Agnostic (VDA5050)",
+            "competitor": "partial",
+            "fleetmind": "yes"
+          },
+          {
+            "feature": "Battery Degradation Simulation (SoH)",
+            "competitor": "no",
+            "fleetmind": "yes"
+          },
+          {
+            "feature": "Zero Licensing Cost (Open Source)",
+            "competitor": "no",
+            "fleetmind": "yes"
+          },
+          {
+            "feature": "Centralized Anti-Deadlock",
+            "competitor": "yes",
+            "fleetmind": "yes"
+          }
+        ]
+      },
+      "dualBrain": {
+        "title": "FleetMind's Dual Brain",
+        "subtitle": "Two powerful engines working in perfect sync: one predicts the future, the other executes the present.",
+        "digitalTwin": {
+          "label": "DIGITAL TWIN",
+          "title": "Predict and Plan",
+          "desc": "Simulate your warehouse in a safe virtual environment. Make investment decisions based on data, not assumptions.",
+          "features": [
+            "What-If Engine with 15+ stress scenarios",
+            "Battery degradation modeling (SoH)",
+            "Congestion and bottleneck detection",
+            "Precise ROI calculation and Capacity Planning"
+          ]
+        },
+        "wes": {
+          "label": "REAL-TIME WES",
+          "title": "Orchestrate and Execute",
+          "desc": "The operational brain that speaks the universal language of robotics (VDA5050) and makes decisions in milliseconds.",
+          "features": [
+            "Hardware agnostic (Locus, MiR, KUKA)",
+            "Task assignment based on SLA and Battery",
+            "Autonomous deadlock resolution",
+            "6-stage package traceability"
+          ]
+        }
+      },
+      "integrations": {
+        "title": "Connects with Your Existing Ecosystem",
+        "subtitle": "FleetMind integrates natively with the systems you already use. No replacements, no friction.",
+        "items": [
+          {
+            "icon": "Database",
+            "name": "WMS (Warehouse Management)",
+            "desc": "SAP WM, Oracle WMS, Manhattan Associates. Bidirectional real-time synchronization."
+          },
+          {
+            "icon": "Server",
+            "name": "ERP Systems",
+            "desc": "SAP ERP, Oracle Cloud, Microsoft Dynamics. Inventory and order integration."
+          },
+          {
+            "icon": "ShoppingCart",
+            "name": "OMS (Order Management)",
+            "desc": "Shopify, Magento, Salesforce Commerce Cloud. Automatic order prioritization."
+          },
+          {
+            "icon": "Truck",
+            "name": "TMS (Transportation)",
+            "desc": "MercuryGate, Oracle TMS. Load optimization and shipment consolidation."
+          }
+        ]
+      },
+      "capabilities": {
+        "title": "One Platform, Four Key Capabilities",
+        "subtitle": "FleetMind orchestrates every aspect of your logistics operation with intelligence and precision.",
+        "items": [
+          {
+            "icon": "Workflow",
+            "title": "Orchestrates Fulfillment",
+            "desc": "Synchronizes inventory, predicts demand, and optimizes operations across warehouses, distribution centers, and last-mile networks.",
+            "features": [
+              "Multi-warehouse management",
+              "ML-powered demand forecasting",
+              "Real-time workflow optimization"
+            ]
+          },
+          {
+            "icon": "Boxes",
+            "title": "Synchronizes Inventory",
+            "desc": "Assigns and synchronizes inventory across warehouses, stores, and last-mile inventory in real time.",
+            "features": [
+              "360° stock visibility",
+              "Automatic rebalancing",
+              "Stockout prevention"
+            ]
+          },
+          {
+            "icon": "Clock",
+            "title": "Guarantees 99.9% SLA",
+            "desc": "Order prioritization, 99.9% SLA adherence, and workforce optimization with intelligent assignment.",
+            "features": [
+              "Configurable SLA tiers",
+              "Proactive alerts",
+              "Compliance reporting"
+            ]
+          },
+          {
+            "icon": "Zap",
+            "title": "Optimizes Workflows in Real Time",
+            "desc": "Predicts demand and dynamically assigns resources using machine learning and adaptive learning.",
+            "features": [
+              "Automatic replanning",
+              "Bottleneck detection",
+              "Elastic fleet scaling"
+            ]
+          }
+        ]
+      },
+      "caseStudy": {
+        "title": "Real Impact on Operations",
+        "subtitle": "Metrics extracted from real simulations with fleets of 15+ AMR robots.",
+        "metrics": [
+          {
+            "icon": "TrendingUp",
+            "value": "268",
+            "label": "Packages/hour",
+            "desc": "Average throughput"
+          },
+          {
+            "icon": "CheckCircle2",
+            "value": "100%",
+            "label": "SLA Compliance",
+            "desc": "787/787 orders"
+          },
+          {
+            "icon": "Users",
+            "value": "45.9%",
+            "label": "Fleet Utilization",
+            "desc": "Optimal zone"
+          },
+          {
+            "icon": "Clock",
+            "value": "89.6s",
+            "label": "Avg Delivery Time",
+            "desc": "Competitive"
+          }
+        ],
+        "featured": {
+          "label": "SUCCESS CASE",
+          "title": "Enterprise Simulation with 15 AMRs",
+          "desc": "Proof of concept with heterogeneous fleet (Rivian EDV + Ford Transit) in a 50x50 cell warehouse with 374 shelves.",
+          "results": [
+            {
+              "value": "0",
+              "label": "Physical collisions"
+            },
+            {
+              "value": "95%",
+              "label": "Battery SoH"
+            },
+            {
+              "value": "103kg",
+              "label": "CO₂ avoided/day"
+            },
+            {
+              "value": "6,312",
+              "label": "Daily capacity (pkg)"
+            }
+          ]
+        }
+      },
+      "whyFleetMind": {
+        "title": "Agnostic-First Automation",
+        "subtitle": "We believe flexibility is not optional. Demand shifts, labor availability fluctuates, and operational requirements evolve.",
+        "desc": "Instead of locking businesses into rigid infrastructure, FleetMind enables organizations to scale, optimize, and expand automation as their needs change, delivering lasting value today while providing the agility to adapt tomorrow.",
+        "dimensions": [
+          {
+            "icon": "Shield",
+            "title": "Hardware Agnosticism",
+            "desc": "Connect robots from any manufacturer (Locus, MiR, KUKA) without changing a single line of code thanks to VDA5050."
+          },
+          {
+            "icon": "Zap",
+            "title": "Elastic Scalability",
+            "desc": "Add or remove robots based on demand. The system automatically reconfigures without inactive licenses."
+          },
+          {
+            "icon": "TrendingUp",
+            "title": "Continuous Optimization",
+            "desc": "The What-If Engine and Digital Twin allow you to test scenarios before implementing changes in production."
+          },
+          {
+            "icon": "CheckCircle2",
+            "title": "Protected Investment",
+            "desc": "No matter what hardware you purchase in the future, FleetMind will support it. Your investment is secure."
+          }
+        ]
+      },
+      "simulationPage": {
+  "heroTitle": "Simulate the Future of Your Warehouse",
+  "heroSubtitle": "Before moving a single physical package or spending a dollar on hardware, validate your operation in our Digital Twin with 99.9% accuracy.",
+  "features": [
+    { "icon": "Cpu", "title": "What-If Engine", "desc": "Test 15+ scenarios: What if demand increases by 300%? What if we add 5 more robots? Get answers in minutes." },
+    { "icon": "BarChart3", "title": "ROI and CapEx Analysis", "desc": "Calculate the exact break-even point, projected operating costs, and labor savings before signing any contract." },
+    { "icon": "Zap", "title": "Real-Time Visualization", "desc": "Watch the operation at 60 FPS. Identify bottlenecks, aisle congestion, and anomalous behaviors visually." },
+    { "icon": "FileOutput", "title": "Executive Reports", "desc": "Export throughput data, fleet utilization, battery health (SoH), and SLA compliance to present to the board." }
+  ],
+  "stepsTitle": "How the Simulation Works",
+  "steps": [
+    { "number": "01", "title": "Configure Your Warehouse", "desc": "Define the layout (50x50 cells), dock locations, chargers, and shelving units." },
+    { "number": "02", "title": "Define Your Fleet and Demand", "desc": "Select robots (Rivian, Transit, etc.) and inject orders with different SLA priority levels." },
+    { "number": "03", "title": "Run and Observe", "desc": "Start the simulation. The Digital Twin will orchestrate every movement, charge, and decision in real time." },
+    { "number": "04", "title": "Analyze and Optimize", "desc": "Review the final metrics. Adjust variables and re-run until you find the perfect configuration." }
+  ]
+},
+"wesPage": {
+  "heroTitle": "The Agnostic Operational Brain",
+  "heroSubtitle": "FleetMind WES bridges the gap between your high-level WMS and low-level robot controllers, orchestrating everything in real time under the VDA5050 standard.",
+  "theGapTitle": "The Problem the WES Solves",
+  "theGapDesc": "The WMS knows WHAT to move, but not HOW or WHO. The robot knows HOW to move, but lacks global vision. FleetMind WES is the intelligent link that makes decisions in milliseconds.",
+  "capabilities": [
+    { "icon": "Network", "title": "Native VDA5050 v2.0.0", "desc": "Speaks the universal language of robotics. Connect Locus, MiR, KUKA, or Fetch without changing a single line of code." },
+    { "icon": "Brain", "title": "Multi-Criteria Assignment", "desc": "Never assigns randomly. Evaluates distance, battery level, current status, and order priority (URGENT, HIGH, NORMAL) in milliseconds." },
+    { "icon": "Shield", "title": "Live Anti-Deadlock", "desc": "If a robot waits >20 steps in a congested cell, the WES clears its route and calculates an alternative path instantly." },
+    { "icon": "Layers", "title": "6-Stage Traceability", "desc": "Immutable tracking of every package: PENDING → ASSIGNED → IN_PROGRESS → PICKED → DELIVERED. Ideal for audits." }
+  ],
+  "architectureTitle": "Real-Time Data Flow",
+  "architectureSteps": [
+    { "name": "WMS / ERP", "desc": "Sends new picking order" },
+    { "name": "FleetMind WES", "desc": "Evaluates, assigns optimal robot, and generates VDA5050 route" },
+    { "name": "MQTT Broker", "desc": "Transmits the order securely and in real time" },
+    { "name": "AMR Robot", "desc": "Executes, reports status, and completes the task" }
+  ]
+},
+      "useCases": {
+        "title": "Real-World Use Cases",
+        "subtitle": "How FleetMind transforms complex logistics operations into measurable results.",
+        "featured": {
+          "number": "01",
+          "icon": "TrendingUp",
+          "title": "Pre-Black Friday Planning",
+          "problem": "Can my warehouse handle 3x demand without collapsing?",
+          "solution": "The What-If Engine runs 15+ scenarios combining fleet, docks, and chargers. Data-driven recommendation: 'Buy 5 robots + 5 docks, not 10 robots'.",
+          "value": "Savings of $200K+ in unnecessary investments"
+        },
+        "items": [
+          {
+            "number": "02",
+            "icon": "Zap",
+            "title": "Urgent Order Management (Prime Now)",
+            "problem": "Critical orders (2 hours) get lost in the queue or require expensive extra labor to be dispatched on time.",
+            "solution": "The system automatically identifies urgent orders and reassigns nearby robots in seconds, prioritizing their route without stopping normal warehouse operations.",
+            "value": "99.9% compliance for urgent deliveries"
+          },
+          {
+            "number": "03",
+            "icon": "TrendingUp",
+            "title": "Consistent Throughput During Peak Hours",
+            "problem": "During peak demand, aisles get saturated, robots wait for each other, and productivity drops by up to 30%.",
+            "solution": "Real-time congestion detection. The system dynamically reroutes traffic or sends loaded robots to the nearest dock to clear the aisle immediately.",
+            "value": "0 operational stoppages due to congestion"
+          },
+          {
+            "number": "04",
+            "icon": "Battery",
+            "title": "Uninterrupted Shifts (Maximum Uptime)",
+            "problem": "Robots run out of battery mid-shift or spend hours charging, reducing actual capacity and creating bottlenecks.",
+            "solution": "Smart Opportunity Charging: the system sends robots to charge during natural micro-pauses in operations, without affecting priority orders.",
+            "value": "+40% battery and fleet lifespan"
+          },
+          {
+            "number": "05",
+            "icon": "Network",
+            "title": "Scalability Without Integration Costs",
+            "problem": "Adding or changing robot manufacturers (e.g., from Locus to MiR) takes months of custom development and million-dollar integration costs.",
+            "solution": "Thanks to native VDA5050 standard, FleetMind discovers and orchestrates any new robot automatically. True Plug & Play.",
+            "value": "Deployment in days, not months. Zero vendor lock-in."
+          }
+        ]
+      },
+      "cta": {
+        "title": "Ready to transform your warehouse?",
+        "description": "From strategic analysis to real-time orchestration. We democratize automation.",
+        "btnGithub": "View on GitHub",
+        "btnDocs": "Technical Documentation",
+        "btnContact": "Contact Me",
+        "trustText": "Have questions about the architecture or want a custom demo? Write to me directly and we'll gladly coordinate it."
+      },
+      "footer": {
+        "brandName": "FleetMind",
+        "brandTagline": "WES & Digital Twin",
+        "mission": "Cyber-Physical Logistics Orchestration System compatible with VDA5050. Agnostic, scalable, and predictive.",
+        "sustainabilityBadge": "Zero Vendor Lock-in",
+        "navTitle": "Explore",
+        "navHome": "Home",
+        "navArchitecture": "Architecture",
+        "navDocs": "Documentation",
+        "resourcesTitle": "Resources",
+        "resourceDocs": "Technical Documentation",
+        "resourceAIBreakdown": "AI Breakdown",
+        "connectTitle": "Connect",
+        "locationPrefix": "Developed in",
+        "locationCity": "Latin America",
+        "locationSuffix": "Inspired by world-class logistics 4.0",
+        "email": "victorcamacaro253@gmail.com",
+        "copyright": "© {year} Victor Camacaro. All rights reserved.",
+        "devNotePrefix": "Built with",
+        "devNoteSuffix": "Python, MQTT, Streamlit, and VDA5050"
+      }
+    }
+  }
+}
