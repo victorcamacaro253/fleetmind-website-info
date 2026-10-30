@@ -4,7 +4,7 @@ import { LanguageContext } from '../context/languageContext';
 import {
   Layers, Monitor, Server, Radio, Cpu, Database,
   ArrowRight, CheckCircle2, Zap, Shield, Network,
-  GitBranch, FileCode, Workflow, Boxes, Activity
+  GitBranch, FileCode, Workflow, Activity
 } from 'lucide-react';
 
 const Architecture = () => {
